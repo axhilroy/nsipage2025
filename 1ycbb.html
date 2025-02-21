@@ -366,9 +366,9 @@ background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 
 }
 
         </style>
-        <script src="./pdfjs/pdf.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
 
-        <script src="./pdfjs/pdf.worker.js"></script>
+        <script>pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";</script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js">
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js">
@@ -397,7 +397,7 @@ background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 
 <div class="buttis">
            <button id="next" class="custom-btn btn-3"><span>Next</span></button>
      <button id="prev" class="custom-btn btn-3"><span>prev</span></button>
-     <a id="downu" class="custom-btn btn-6" href="/pdf/1ycbb.pdf"  download="Jr Chemistry Baby Bullet(@narayanastudentsikkada).pdf"><span>Download</span></a>
+     <a id="downu" class="custom-btn btn-6" href="/nsipage2025/pdf/1ycbb.pdf"  download="Jr Chemistry Baby Bullet(@narayanastudentsikkada).pdf"><span>Download</span></a>
 
 </div>
 
@@ -407,11 +407,11 @@ background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 
   <script>
     toastr.options.progressBar = true;
 
-const url = "/pdf/1ycbb.pdf";
+const url = "/nsipage2025/pdf/1ycbb.pdf";
 
 const pdfjsLib = window["pdfjs-dist/build/pdf"];
 pdfjsLib.GlobalWorkerOptions.workerSrc =
-"//mozilla.github.io/pdf.js/build/pdf.worker.js";
+"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
 
 let loggedIn = true,
 pdfDoc = null,
