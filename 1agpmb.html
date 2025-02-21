@@ -1,0 +1,533 @@
+<html>
+    <head>
+        <style>
+                    body {
+          background: #f2f4f8;
+        }
+        h1 {
+            margin: 0 auto; /*margin reset*/
+            background: none;
+            display: block;
+            text-align: center;
+            position: relative;
+            span {
+              background: #f2f4f8;
+              padding: 0 10px;
+            }
+            &:before {
+               content: '';
+               background: repeating-linear-gradient(180deg, #ce3d3a, #ce3d3a 1px, #f2f4f8 1px, #f2f4f8 8px);
+               width: 100%;
+              height: 10px;
+              position: absolute;
+              top: 15px;
+              right: 0;
+              z-index: -1
+            }
+        }
+        .cot {
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          height: 20vh;
+          font-family: "Open Sans";
+        }
+
+        .education {
+          --bg-color: #ffd861;
+          --bg-color-light: #ffeeba;
+          --text-color-hover: #4C5656;
+          --box-shadow-color: rgba(255, 215, 97, 0.48);
+        }
+
+        .credentialing {
+          --bg-color: #B8F9D3;
+          --bg-color-light: #e2fced;
+          --text-color-hover: #4C5656;
+          --box-shadow-color: rgba(184, 249, 211, 0.48);
+        }
+
+        .wallet {
+          --bg-color: #CEB2FC;
+          --bg-color-light: #F0E7FF;
+          --text-color-hover: #fff;
+          --box-shadow-color: rgba(206, 178, 252, 0.48);
+        }
+
+        .human-resources {
+          --bg-color: #DCE9FF;
+          --bg-color-light: #f1f7ff;
+          --text-color-hover: #4C5656;
+          --box-shadow-color: rgba(220, 233, 255, 0.48);
+        }
+
+        .card {
+          width: 220px;
+          height: 321px;
+          background: #fff;
+          border-top-right-radius: 10px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          box-shadow: 0 14px 26px rgba(0,0,0,0.04);
+          transition: all 0.3s ease-out;
+          text-decoration: none;
+        }
+
+        .card:hover {
+          transform: translateY(-5px) scale(1.005) translateZ(0);
+          box-shadow: 0 24px 36px rgba(0,0,0,0.11),
+            0 24px 46px var(--box-shadow-color);
+        }
+
+        .card:hover .overlay {
+          transform: scale(4) translateZ(0);
+        }
+
+        .card:hover .circle {
+          border-color: var(--bg-color-light);
+          background: var(--bg-color);
+        }
+
+        .card:hover .circle:after {
+          background: var(--bg-color-light);
+        }
+
+        .card:hover p {
+          color: var(--text-color-hover);
+        }
+
+        .card:active {
+          transform: scale(1) translateZ(0);
+          box-shadow: 0 15px 24px rgba(0,0,0,0.11),
+            0 15px 24px var(--box-shadow-color);
+        }
+
+        .card p {
+          font-size: 17px;
+          color: #4C5656;
+          margin-top: 30px;
+          z-index: 1000;
+          transition: color 0.3s ease-out;
+        }
+
+        .circle {
+          width: 131px;
+          height: 131px;
+          border-radius: 50%;
+          background: #fff;
+          border: 2px solid var(--bg-color);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          z-index: 1;
+          transition: all 0.3s ease-out;
+        }
+
+        .circle:after {
+          content: "";
+          width: 118px;
+          height: 118px;
+          display: block;
+          position: absolute;
+          background: var(--bg-color);
+          border-radius: 50%;
+          top: 7px;
+          left: 7px;
+          transition: opacity 0.3s ease-out;
+        }
+
+        .circle svg {
+          z-index: 10000;
+          transform: translateZ(0);
+        }
+
+        .overlay {
+          width: 118px;
+          position: absolute;
+          height: 118px;
+          border-radius: 50%;
+          background: var(--bg-color);
+          top: 70px;
+          left: 50px;
+          z-index: 0;
+          transition: transform 0.3s ease-out;
+        }
+            #pdfviewer {
+            border: 1px #333 solid;
+            justify-self: center;
+            background: #eee;
+            width: 95%;
+            }
+            #testah{
+                font-size: 30px;
+          color: none;
+          margin-top: 30px;
+          z-index: 1000;
+          transition: color 0.3s ease-out;
+            }
+            #poer{
+                display: grid;
+                text-align: center;
+
+            }
+            .custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+button {
+  margin: 20px;
+}
+
+/* 3 */
+.btn-3 {
+  background: rgb(0,172,238);
+background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+
+}
+.btn-3 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-3:before,
+.btn-3:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+   background: rgba(2,126,251,1);
+  transition: all 0.3s ease;
+}
+.btn-3:before {
+  height: 0%;
+  width: 2px;
+}
+.btn-3:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-3:hover{
+   background: transparent;
+  box-shadow: none;
+}
+.btn-3:hover:before {
+  height: 100%;
+}
+.btn-3:hover:after {
+  width: 100%;
+}
+.btn-3 span:hover{
+   color: rgba(2,126,251,1);
+}
+.btn-3 span:before,
+.btn-3 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+   background: rgba(2,126,251,1);
+  transition: all 0.3s ease;
+}
+.btn-3 span:before {
+  width: 2px;
+  height: 0%;
+}
+.btn-3 span:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-3 span:hover:before {
+  height: 100%;
+}
+.btn-3 span:hover:after {
+  width: 100%;
+
+}
+
+#downu{
+    margin: 20px;
+    text-align: center;
+    text-decoration:none;
+}
+#downu span{
+      position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* 6 */
+.btn-6 {
+  background: rgb(247,150,192);
+background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 100%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.btn-6 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-6:before,
+.btn-6:after {
+  position: absolute;
+  content: "";
+  height: 0%;
+  width: 1px;
+ box-shadow:
+   -1px -1px 20px 0px rgba(255,255,255,1),
+   -4px -4px 5px 0px rgba(255,255,255,1),
+   7px 7px 20px 0px rgba(0,0,0,.4),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+}
+.btn-6:before {
+  right: 0;
+  top: 0;
+  transition: all 500ms ease;
+}
+.btn-6:after {
+  left: 0;
+  bottom: 0;
+  transition: all 500ms ease;
+}
+.btn-6:hover{
+  background: transparent;
+  color: #76aef1;
+  box-shadow: none;
+}
+.btn-6:hover:before {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-6:hover:after {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-6 span:before,
+.btn-6 span:after {
+  position: absolute;
+  content: "";
+  box-shadow:
+   -1px -1px 20px 0px rgba(255,255,255,1),
+   -4px -4px 5px 0px rgba(255,255,255,1),
+   7px 7px 20px 0px rgba(0,0,0,.4),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+}
+.btn-6 span:before {
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: .5px;
+  transition: all 500ms ease;
+}
+.btn-6 span:after {
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: .5px;
+  transition: all 500ms ease;
+}
+.btn-6 span:hover:before {
+  width: 100%;
+}
+.btn-6 span:hover:after {
+  width: 100%;
+}
+.buttis{
+    display: flex;
+    justify-content: center;
+}
+
+        </style>
+        <script src="./pdfjs/pdf.js"></script>
+
+        <script src="./pdfjs/pdf.worker.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js">
+        </script>
+
+
+
+
+    </head>
+  <body>
+    <div class='separator' style='clear: both;'><a href='https://www.instagram.com/narayanastudentsikkada/' style='display: block; padding: 1em 0px; text-align: center;'><img alt='' border='0' data-original-height='170' data-original-width='680' height='117' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjq5f4tdHXcXwsksFIU81QpGCwuZw562H0gyoQ6aDBtpN1kkvTu52aMp-LifH3nLUlR_i5NYV1pp9NMfyzOGm6i9JZSEEOd07RKWS0iQXUCTp6SE483YbdTV9xBSD8Af1wqs8Fui5n6ZM3gz6XX8JnSvhYEHMPxcD5Cyvh18n8a1TMEgnQm7JCSCQc76BEF/w465-h117/upsacalled_logo-removebg-preview%20(2)%20(2).png' width='465'/></a></div>
+    <div class='tit'>
+        <h1><span>Maths 1A</span></h1><br/>
+    </div>
+
+    <div class='tit'>
+        <h1><span>Manabadi Guess papers</span></h1><br/>
+    </div>
+
+    <div class="flex-grow" style="display: grid;">
+      <canvas id="pdfviewer">
+        <p>Loading...   </p>
+      </canvas>
+    </div>
+    <div id="testah" style="text-align: center;" class="pages text-center my-4"><span class="mr-2">Page</span><span id="currentPage">0</span><span class="mx-1">/</span><span id="totalPages">0</span></div>
+<div class="buttis">
+           <button id="next" class="custom-btn btn-3"><span>Next</span></button>
+     <button id="prev" class="custom-btn btn-3"><span>prev</span></button>
+     <a id="downu" class="custom-btn btn-6" href="/pdf/1agpmb.pdf"  download="1A Manabadi guess papers(@narayanastudentsikkada).pdf"><span>Download</span></a>
+
+</div>
+
+    </div>
+  </body>
+
+  <script>
+    toastr.options.progressBar = true;
+
+const url = "/pdf/1agpmb.pdf";
+
+const pdfjsLib = window["pdfjs-dist/build/pdf"];
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+"//mozilla.github.io/pdf.js/build/pdf.worker.js";
+
+let loggedIn = true,
+pdfDoc = null,
+pageNum = 1,
+pageRendering = false,
+pageNumPending = null,
+scale = 1,
+canvas = document.getElementById("pdfviewer"),
+ctx = canvas.getContext("2d");
+
+/**
+ * Get page info from document, resize canvas accordingly, and render page.
+ * @param num Page number.
+ */
+function renderPage(num) {
+  pageRendering = true;
+  // Using promise to fetch the page
+  pdfDoc.getPage(num).then(function (page) {
+    const viewport = page.getViewport({ scale });
+    canvas.height = viewport.height;
+    canvas.width = viewport.width;
+
+    // Render PDF page into canvas context
+    var renderContext = {
+      canvasContext: ctx,
+      viewport: viewport };
+
+    var renderTask = page.render(renderContext);
+
+    // Wait for rendering to finish
+    renderTask.promise.then(function () {
+      pageRendering = false;
+      if (pageNumPending !== null) {
+        // New page rendering is pending
+        renderPage(pageNumPending);
+        pageNumPending = null;
+      }
+    });
+  });
+
+  // Update page counters
+  document.getElementById("currentPage").textContent = num;
+}
+
+/**
+ * If another page rendering in progress, waits until the rendering is
+ * finised. Otherwise, executes rendering immediately.
+ */
+function queueRenderPage(num) {
+  if (pageRendering) {
+    pageNumPending = num;
+  } else {
+    renderPage(num);
+  }
+}
+
+/**
+ * Asynchronously downloads PDF.
+ */
+pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
+  pdfDoc = pdfDoc_;
+  document.getElementById("totalPages").textContent = pdfDoc.numPages;
+
+  // Initial/first page rendering
+  renderPage(pageNum || 1);
+});
+
+function onPrevPage() {
+  if (pageNum <= 1) {
+    return;
+  }
+  pageNum--;
+  queueRenderPage(pageNum);
+}
+document.getElementById("prev").addEventListener("click", onPrevPage);
+
+function onNextPage() {
+  if (
+  pageNum < 5 ||
+  loggedIn)
+  {
+    if (pageNum >= pdfDoc.numPages) {
+      return;
+    }
+    pageNum++;
+    queueRenderPage(pageNum);
+  } else {
+    toastr.error("You Must be Logged in to view more pages", "Sorry");
+  }
+}
+document.getElementById("next").addEventListener("click", onNextPage);
+
+
+document.getElementById("download").addEventListener("click", e => {
+  if (loggedIn) {
+    toastr.success('You can download the Document', 'Ok!');
+  } else {
+    toastr.error("You Must be Logged in to Download this Document", "Sorry");
+  }
+});
+
+
+const loggedInClass = "bg-green-500";
+const loggedOutClass = "bg-red-500";
+$(".nav").prepend($("<a>", { href: "#" }).
+text("Logged In").
+addClass("border py-2 px-4 rounded " + (loggedIn ? loggedInClass : loggedOutClass)).
+on("click", function (e) {
+  e.preventDefault();
+  if (loggedIn) {
+    $(this).removeClass(loggedInClass).addClass(loggedOutClass);
+    loggedIn = false;
+  } else {
+    $(this).removeClass(loggedOutClass).addClass(loggedInClass);
+    loggedIn = true;
+  }
+}));
+  </script>
+</html>
